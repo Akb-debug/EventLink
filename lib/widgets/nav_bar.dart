@@ -8,7 +8,7 @@ class BarNav extends StatelessWidget {
     return 
       BottomNavigationBar(
         type: BottomNavigationBarType.fixed, 
-        backgroundColor: const Color.fromARGB(157, 73, 12, 106),
+        backgroundColor: const Color.fromARGB(255, 126, 75, 215),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
         

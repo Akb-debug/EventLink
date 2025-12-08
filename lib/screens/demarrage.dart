@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:event_link/widgets/social_boutons.dart";
-import "package:font_awesome_flutter/font_awesome_flutter.dart";
+// ignore: depend_on_referenced_packages
+import "package:flutter_svg/flutter_svg.dart";
 
 class Demarrage extends StatelessWidget {
   const Demarrage({super.key});
@@ -25,44 +26,43 @@ class Demarrage extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromRGBO(0, 0, 0, 0.5),
+                Color.fromRGBO(0, 0, 0, 0.3),
                 Color.fromRGBO(41, 21, 64, 1),
-                Color.fromRGBO(255, 255, 255, 1),
               ],
             ),
           ),
         ),
-        const Positioned.fill(
+        Positioned.fill(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 70),
-              Text(
+              const SizedBox(height: 70),
+              const Text(
                 "EventLink",
                 style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              Text("Allons-Y",
+              const Text("Allons-Y",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              SocialButton("Continuer avec Email"),
-              SizedBox(height: 15),
-              SocialButton("Continuer avec Apple", icon: Icons.apple),
-              SizedBox(height: 15),
+              const SocialButton("Continuer avec Email"),
+              const SizedBox(height: 15),
+              const SocialButton("Continuer avec Apple", icon: Icons.apple),
+              const SizedBox(height: 15),
               SocialButton(
-                "Continuer avec Google",
-                iconWidget: FaIcon(FontAwesomeIcons.google),
+                "Continuer avec Google", 
+                svgPicture: SvgPicture.asset("assets/icons/google.svg", width: 25)
               ),
             ],
           ),

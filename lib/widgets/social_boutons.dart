@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
-  final String text;
+  final String  text;
   final IconData? icon;
-  final Widget? iconWidget;
+  final Widget? svgPicture;
 
-  const SocialButton(this.text, {super.key, this.icon, this.iconWidget});
+  const SocialButton(this.text, {super.key, this.icon, this.svgPicture});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,11 @@ class SocialButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            iconWidget ??
+            if (svgPicture != null) svgPicture!,
+            if (svgPicture == null && icon != null)
               Icon(
                 icon,
-                size: 25,
+                size: 30,
                 color: Colors.black,
               ),
 

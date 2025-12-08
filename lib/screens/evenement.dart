@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:event_link/widgets/nav_bar.dart'; 
 
 class EventsScreen extends StatefulWidget {
   const EventsScreen({super.key});
@@ -14,7 +15,7 @@ class _EventsScreenState extends State<EventsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: _bottomNav(),
+      bottomNavigationBar: const BarNav(), 
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -24,14 +25,14 @@ class _EventsScreenState extends State<EventsScreen> {
               children: [
                 const SizedBox(height: 10),
 
-                // Bouton retour
+                
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
                   child: const Icon(Icons.arrow_back, size: 28),
                 ),
                 const SizedBox(height: 15),
 
-                // Titre
+                
                 const Center(
                   child: Text(
                     "Mes événements",
@@ -43,7 +44,7 @@ class _EventsScreenState extends State<EventsScreen> {
                 ),
                 const SizedBox(height: 20),
 
-                // Filtres
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,7 +55,7 @@ class _EventsScreenState extends State<EventsScreen> {
                 ),
                 const SizedBox(height: 30),
 
-                // Cartes d'événements
+                
                 _eventCard(),
                 const SizedBox(height: 20),
                 _eventCard(),
@@ -66,7 +67,7 @@ class _EventsScreenState extends State<EventsScreen> {
     );
   }
 
-  // Bouton filtre
+  
   Widget _filterButton(String label) {
     bool active = (selectedFilter == label);
     return GestureDetector(
@@ -90,7 +91,7 @@ class _EventsScreenState extends State<EventsScreen> {
     );
   }
 
-  // Carte événement
+  
   Widget _eventCard() {
     return Container(
       decoration: BoxDecoration(
@@ -106,7 +107,7 @@ class _EventsScreenState extends State<EventsScreen> {
       ),
       child: Column(
         children: [
-          // Image
+          
           ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(16),
@@ -120,7 +121,7 @@ class _EventsScreenState extends State<EventsScreen> {
             ),
           ),
 
-          // Informations
+         
           Container(
             padding: const EdgeInsets.all(15),
             decoration: const BoxDecoration(
@@ -133,7 +134,7 @@ class _EventsScreenState extends State<EventsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Texte
+                
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
@@ -162,7 +163,7 @@ class _EventsScreenState extends State<EventsScreen> {
                   ],
                 ),
 
-                // Date
+                
                 Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -183,56 +184,6 @@ class _EventsScreenState extends State<EventsScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  // Bottom navigation
-  Widget _bottomNav() {
-    return Container(
-      height: 75,
-      decoration: const BoxDecoration(
-        color: Color(0xFF7A3DBE),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
-          _navItem(Icons.home, "Accueil"),
-          _navItem(Icons.calendar_today, "Réservation"),
-          _navItem(Icons.event, "événements", active: true),
-          _navItem(Icons.person, "Profil & réseau"),
-        ],
-      ),
-    );
-  }
-}
-
-// Item bottom nav
-class _navItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final bool active;
-
-  const _navItem(this.icon, this.label, {this.active = false});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: active ? Colors.white : Colors.white70),
-        const SizedBox(height: 5),
-        Text(
-          label,
-          style: TextStyle(
-            color: active ? Colors.white : Colors.white70,
-            fontSize: 12,
-          ),
-        )
-      ],
     );
   }
 }

@@ -7,7 +7,8 @@ class Connexion extends StatelessWidget {
     return const Scaffold(
   
       body:  Center(
-        child: Text('Page de connexion'),
+      
+        
       ),
     );
   }

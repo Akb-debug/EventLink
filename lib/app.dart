@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:event_link/screens/reservation.dart';
+import 'package:event_link/screens/demarrage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Reservation(),
+      home: const Demarrage(),
     );
   }
 }

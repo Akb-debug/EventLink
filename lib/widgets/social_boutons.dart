@@ -1,7 +1,8 @@
+import 'package:event_link/screens/accueil.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
-  final String  text;
+  final String text;
   final IconData? icon;
   final Widget? svgPicture;
 
@@ -12,9 +13,15 @@ class SocialButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsGeometry.symmetric(horizontal: 25),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomePage(),
+              ));
+        },
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric( vertical: 14),
+          padding: const EdgeInsets.symmetric(vertical: 14),
           elevation: 0,
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
@@ -31,9 +38,7 @@ class SocialButton extends StatelessWidget {
                 size: 30,
                 color: Colors.black,
               ),
-
             const SizedBox(width: 8),
-            
             Text(
               text,
               style: const TextStyle(

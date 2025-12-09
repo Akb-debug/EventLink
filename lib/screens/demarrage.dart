@@ -14,7 +14,6 @@ class Demarrage extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              // Image de concert générique
               image: AssetImage("assets/images/background.jpg"),
               fit: BoxFit.cover,
             ),
@@ -26,7 +25,7 @@ class Demarrage extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromRGBO(0, 0, 0, 0.3),
+                Color.fromRGBO(0, 0, 0, 0.4),
                 Color.fromRGBO(41, 21, 64, 1),
               ],
             ),
@@ -60,10 +59,9 @@ class Demarrage extends StatelessWidget {
               const SizedBox(height: 15),
               const SocialButton("Continuer avec Apple", icon: Icons.apple),
               const SizedBox(height: 15),
-              SocialButton(
-                "Continuer avec Google", 
-                svgPicture: SvgPicture.asset("assets/icons/google.svg", width: 25)
-              ),
+              SocialButton("Continuer avec Google",
+                  svgPicture:
+                      SvgPicture.asset("assets/icons/google.svg", width: 25)),
             ],
           ),
         ),

@@ -2,7 +2,10 @@ import 'package:event_link/screens/profil.dart';
 import 'package:flutter/material.dart';
 
 import 'package:event_link/screens/demarrage.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> jules
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,9 +20,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
 
       home: const ProfilScreen(),
 
+=======
+      home: const ProfilScreen(),
+>>>>>>> jules
     );
   }
 }

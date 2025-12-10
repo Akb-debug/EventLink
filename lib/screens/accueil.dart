@@ -1,6 +1,5 @@
 import 'package:event_link/widgets/event_card.dart';
 import 'package:event_link/widgets/filter_button.dart';
-import 'package:event_link/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -38,13 +37,12 @@ class HomePage extends StatelessWidget {
                   colors: [
                     Color.fromRGBO(42, 23, 64, 1),
                     Color.fromRGBO(108 , 59, 166, 1),
-                  ]
+                  ],
                 )
               ),
               child: TextField(
                 decoration: InputDecoration(
-                  label: const Text(
-                    "Rechercher des cultures...", ),
+                  hintText: "Rechercher des cultures...",
                   filled: true,
                   fillColor: Colors.white,
                   isDense: true,
@@ -86,10 +84,24 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 children:const [
                   EventCard(
-                    imageUrl: "assets/images/business.jpg",
                     title: "Concert Jazz", 
                     date: "20 Nov 2025", 
-                    location: "Lomé,Togo"
+                    location: "Lomé,Togo", 
+                    imageUrl: 'assets/images/business.jpg',
+                  ),
+
+                  EventCard(
+                    title: "Soirée musicale", 
+                    date: "10 Dec 2025", 
+                    location: "Lomé,Togo", 
+                    imageUrl: 'assets/images/image-1.jpg',
+                  ),
+
+                  EventCard(
+                    title: "Karaoké", 
+                    date: "19 Jan 2026", 
+                    location: "Lomé,Togo", 
+                    imageUrl: 'assets/images/image-1.jpg',
                   )
                 ],
               ),
@@ -97,8 +109,6 @@ class HomePage extends StatelessWidget {
           ],
         ), 
       ),
-
-      bottomNavigationBar: const BarNav(),
     );
   }
 }

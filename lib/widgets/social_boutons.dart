@@ -1,25 +1,24 @@
-import 'package:event_link/screens/accueil.dart';
 import 'package:flutter/material.dart';
-
 class SocialButton extends StatelessWidget {
   final String text;
   final IconData? icon;
   final Widget? svgPicture;
+  final VoidCallback? onPressed;
 
-  const SocialButton(this.text, {super.key, this.icon, this.svgPicture});
+  const SocialButton(
+    this.text, {
+    super.key,
+    this.icon,
+    this.svgPicture,
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsGeometry.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomePage(),
-              ));
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 14),
           elevation: 0,
@@ -33,11 +32,7 @@ class SocialButton extends StatelessWidget {
           children: [
             if (svgPicture != null) svgPicture!,
             if (svgPicture == null && icon != null)
-              Icon(
-                icon,
-                size: 30,
-                color: Colors.black,
-              ),
+              Icon(icon, size: 30, color: Colors.black),
             const SizedBox(width: 8),
             Text(
               text,

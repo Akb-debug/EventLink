@@ -1,3 +1,4 @@
+import 'package:event_link/screens/inscription.dart';
 import 'package:event_link/screens/profil.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ProfilScreen(),
+      home: const InscriptionScreen(),
     );
   }
 }

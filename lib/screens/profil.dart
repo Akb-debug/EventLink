@@ -24,7 +24,7 @@ class ProfilScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: const Icon(Icons.arrow_back, size: 28),
+                    child: const Icon(Icons.chevron_left, size: 28),
                   ),
                   const SizedBox(width: 20),
                   const Text(
@@ -54,7 +54,7 @@ class ProfilScreen extends StatelessWidget {
                   children: [
                     // Photo ronde
                     Container(
-                      width: 90,
+                      width: 40,
                       height: 90,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
